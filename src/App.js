@@ -3,10 +3,7 @@ import Posts from './components/Posts';
 import PostForm from './components/PostForm';
 import './App.css';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-
-
-const store = createStore(()=> [], {}, applyMiddleware());
+import store from './components/store';
 
 function App() {
   return (
