@@ -22,6 +22,10 @@ export class PostForm extends Component {
         };
 
         this.props.createPosts(post)
+        this.setState({
+            title: '',
+            body: ''
+        })
     }
     
     render() {
