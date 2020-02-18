@@ -1,0 +1,14 @@
+// Redux cycle
+
+// | action creator | -> | action  | -> | dispatch | -> | Reducers | -> | State |
+
+// -Action creator is function that creates/returns a plain js object (action) - only purpose is to return action
+// -Actions have a type property and a payload property
+// 	-Type property on an action -> describes purpose of action, which part of state we want to alter
+// 	-payload property… describes some context around the change we want to make
+// 	-job of an action is to describe some change we want to make to our data store
+// -Dispatch function -> takes in an action, makes copies of that object and sends it to all the places that need it in our application
+// -Reducers -> functions responsible for taking in an action plus some existing data [so old data + new data] process action based on type, change data and return new state 
+// -State => compiled data, central repository of all data created by reducers
+
+
