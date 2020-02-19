@@ -18,7 +18,7 @@ const createPolicyExample = () => {
 
 // However it will need more versatility than this because this will only work if customer name is Al and the amount is 20…. SO, to make it dynamic we must use arguments like this:
 
-const createPolicy = (name, amount) => {
+export const createPolicy = (name, amount) => {
   return {
     type: 'CREATE_POLICY',
     payload: {
@@ -30,7 +30,7 @@ const createPolicy = (name, amount) => {
 
 // So that is the action creator for creating a policy… now we need two more, one for creating a claim, one for deleting policy
 
-const createClaim = (name, amount) => {
+export const createClaim = (name, amount) => {
   return {
     type: 'CREATE_CLAIM',
     payload: {
@@ -41,7 +41,7 @@ const createClaim = (name, amount) => {
 }
 
 
-const deletePolicy = name => {
+export const deletePolicy = name => {
   return {
     type: 'DELETE_POLICY',
     payload: {

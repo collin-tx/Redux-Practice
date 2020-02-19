@@ -15,7 +15,7 @@ const claimsHistoryExample = (oldListOfClaims, action) => {
 
 // this is almost great, but must deal with the possibility that the reducer is being called for the first time, thus we just simply adjust our argument to a default
 
-const claimsHistory = (oldListOfClaims = [], action) => {
+export const claimsHistory = (oldListOfClaims = [], action) => {
   if (action.type === 'CREATE_CLAIM'){
     // needs to update list
     return [...oldListOfClaims, action.payload];
@@ -35,7 +35,7 @@ const claimsHistoryAlternative = (state = [], action) => {
   state;
 }
 
-const accounting = (money = 100, action) => {
+export const accounting = (money = 100, action) => {
   if (action.type === 'CREATE_CLAIM'){
     return money - action.payload.amount;
   } else if(action.type === 'CREATE_POLICY'){
@@ -45,7 +45,7 @@ const accounting = (money = 100, action) => {
 }
 
 
-const policies = (listOfPolicies = [], action) => {
+export const policies = (listOfPolicies = [], action) => {
   if (action.type === 'CREATE_POLICY'){
     return [...listOfPolicies, action.payload.name];
   } else if (action.type === 'DELETE_POLICY'){
