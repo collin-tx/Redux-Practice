@@ -71,12 +71,14 @@ const ourDepartments = combineReducers({
   policies
 })
 
-const store = createStore(ourDepartments);
+const store = createStore(ourDepartments); // passed the combined reducers to createStore in order to instantiate the store
 
 // const action = createPolicy('Steve', 20);
 // console.log(action);
 
 store.dispatch(createPolicy('Steve', 500));
+const oldState = store.getState(); // state at this point in time can be bound to a variable 
+
 store.dispatch(createPolicy('John', 200));
 store.dispatch(createPolicy('Veronica', 200));
 // console.log('store', store);
@@ -86,4 +88,5 @@ store.dispatch(createClaim('John', 500));
 
 store.dispatch(deletePolicy('Steve'));
 
-console.log('getstate', store.getState());
+console.log('old', oldState); // can getState at any point etc.
+console.log('newest', store.getState());
